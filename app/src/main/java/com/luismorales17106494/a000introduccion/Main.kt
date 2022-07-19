@@ -2,7 +2,8 @@ package com.luismorales17106494.a000introduccion
 
 fun main() {
 
-    clase001Variables()
+    //clase001Variables()
+    clase002Clases()
 }
 
 /*001 Variables*/
@@ -19,4 +20,18 @@ fun clase001Variables() {
     println(c)
 
 
+}
+
+/*002 Clases*/
+class Persona(val nombre: String, val apellido: String) {
+
+    fun darBienvenida() {
+        println("Bienvenido $nombre $apellido")
+    }
+
+}
+
+fun clase002Clases() {
+    val persona: Persona = Persona("Lalo", "-55")
+    persona.darBienvenida()
 }
