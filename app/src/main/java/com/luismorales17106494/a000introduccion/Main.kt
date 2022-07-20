@@ -4,7 +4,8 @@ fun main() {
 
     //clase001Variables()
     //clase002Clases()
-    clase003ClasesConstructorVacio()
+    //clase003ClasesConstructorVacio()
+    clase004DataClass()
 }
 
 /*001 Variables*/
@@ -45,6 +46,7 @@ class Persona2(var nombre: String = "", var apellido: String = "") {
     }
 
 }
+
 fun clase003ClasesConstructorVacio() {
     val persona: Persona2 = Persona2("Lalo", "-55")
     val persona2 = Persona2()
@@ -57,4 +59,18 @@ fun clase003ClasesConstructorVacio() {
     persona2.apellido = "lalo"
 
     println("Persona2:  ${persona2.darBienvenida()}")
+}
+
+/*004 Data class */
+data class User(val nombre: String, val edad: Int){}
+fun clase004DataClass() {
+    val usuario = User("Lalo", 25)
+    val usuario2 = usuario.copy(nombre = "Edu", edad = 50)
+    val usuario3 = usuario.copy()
+
+
+    println("Usuario 1: $usuario")
+    println("Usuario 2: $usuario2")
+    println("Usuario 3: $usuario3")
+    println("Son iguales ${usuario.equals(usuario2)}")
 }
