@@ -5,7 +5,9 @@ fun main() {
     //clase001Variables()
     //clase002Clases()
     //clase003ClasesConstructorVacio()
-    clase004DataClass()
+    //clase004DataClass()
+    clase005Constantes()
+
 }
 
 /*001 Variables*/
@@ -73,4 +75,18 @@ fun clase004DataClass() {
     println("Usuario 2: $usuario2")
     println("Usuario 3: $usuario3")
     println("Son iguales ${usuario.equals(usuario2)}")
+}
+
+/*005 Constantes*/
+const val fecha = "20 de Julio"
+fun clase005Constantes(){
+    println(fecha)
+    println(Constantes.fecha)
+
+
+}
+class Constantes{
+    companion object {
+        const val fecha = "25 de Julio"
+    }
 }
