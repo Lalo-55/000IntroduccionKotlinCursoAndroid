@@ -6,7 +6,8 @@ fun main() {
     //clase002Clases()
     //clase003ClasesConstructorVacio()
     //clase004DataClass()
-    clase005Constantes()
+    //clase005Constantes()
+    clase006EnumClass()
 
 }
 
@@ -64,7 +65,8 @@ fun clase003ClasesConstructorVacio() {
 }
 
 /*004 Data class */
-data class User(val nombre: String, val edad: Int){}
+data class User(val nombre: String, val edad: Int) {}
+
 fun clase004DataClass() {
     val usuario = User("Lalo", 25)
     val usuario2 = usuario.copy(nombre = "Edu", edad = 50)
@@ -79,14 +81,59 @@ fun clase004DataClass() {
 
 /*005 Constantes*/
 const val fecha = "20 de Julio"
-fun clase005Constantes(){
+fun clase005Constantes() {
     println(fecha)
     println(Constantes.fecha)
 
 
 }
-class Constantes{
+
+class Constantes {
     companion object {
         const val fecha = "25 de Julio"
     }
+}
+
+
+/*006 Enum Clases*/
+enum class DIAS(val numero: Int) {
+    LUNES(1),
+    MARTES(2),
+    MIERCOLES(3),
+    JUEVES(4),
+    VIERNES(5),
+    SABADO(6),
+    DOMINGO(7)
+
+}
+
+fun clase006EnumClass() {
+    val diaLunes = DIAS.LUNES.numero
+    val diaMartes = DIAS.MARTES
+    println(diaLunes)
+    println(diaMartes)
+
+    var estado = ESTADO.STOP
+    println(estado.descripcion())
+    estado = ESTADO.PLAY
+    println(estado.descripcion())
+    estado = ESTADO.STOP
+    println(estado.descripcion())
+
+
+}
+
+enum class ESTADO {
+    PLAY,
+    PAUSE,
+    STOP;
+    fun descripcion(): String {
+        return when (this) {
+            PLAY -> "El estado es PLAY"
+            PAUSE -> "El estado es PAUSE"
+            STOP -> "El estado es STOP"
+
+        }
+    }
+
 }
