@@ -8,6 +8,7 @@ fun main() {
     //clase004DataClass()
     //clase005Constantes()
     clase006EnumClass()
+    clase007Funciones()
 
 }
 
@@ -135,5 +136,15 @@ enum class ESTADO {
 
         }
     }
+
+}
+
+/*007 Funciones */
+fun clase007Funciones(){
+
+    fun esPar(numero: Int): Boolean{
+        return numero % 2 == 0
+    }
+    println(esPar(10))
 
 }
