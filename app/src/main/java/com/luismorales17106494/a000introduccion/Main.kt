@@ -7,8 +7,9 @@ fun main() {
     //clase003ClasesConstructorVacio()
     //clase004DataClass()
     //clase005Constantes()
-    clase006EnumClass()
-    clase007Funciones()
+    //clase006EnumClass()
+    //clase007Funciones()
+    clase008ControlFlowIf()
 
 }
 
@@ -146,5 +147,23 @@ fun clase007Funciones(){
         return numero % 2 == 0
     }
     println(esPar(10))
+
+}
+/*008 Control flow -if */
+fun clase008ControlFlowIf(){
+    val a = 10
+    val b = 12
+    var max = a
+    if (a < b)
+        max = b
+    println(max)
+
+    max = if (a > b){
+        a
+    }else{
+        b
+    }
+    println(max)
+
 
 }
