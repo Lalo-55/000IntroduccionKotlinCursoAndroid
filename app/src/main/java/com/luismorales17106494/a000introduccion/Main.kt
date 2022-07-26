@@ -11,7 +11,8 @@ fun main() {
     //clase007Funciones()
     //clase008ControlFlowIf()
     //clase008ControlFlowFor()
-    clase008ControlFlowWhen()
+    //clase008ControlFlowWhen()
+    clase008ControlFlowWhileDoWhile()
 
 }
 
@@ -172,7 +173,6 @@ fun clase008ControlFlowIf() {
 
 }
 
-
 /*008 Control flow -for*/
 fun clase008ControlFlowFor() {
     var listaMutable = mutableListOf<String>("Lalo", "lalo2", "lalo3", "lalo4")
@@ -199,6 +199,7 @@ fun clase008ControlFlowFor() {
 
 }
 
+/*008 Control flow -When*/
 fun clase008ControlFlowWhen() {
     val x = 0
 
@@ -217,4 +218,24 @@ fun clase008ControlFlowWhen() {
         }
     }
 
+}
+
+/*008 Control flow -While y Do While*/
+fun clase008ControlFlowWhileDoWhile() {
+    //while
+    var i = 0
+    while (i <= 5) {
+        println("Valor $i")
+        i++
+    }
+
+    var suma = 0
+    var input: String
+    do {
+        print("Ingresa un numero: ")
+        input = readln()
+        suma += input.toInt()
+
+    } while (input != "0")
+    println("La suma es $suma")
 }
