@@ -9,7 +9,8 @@ fun main() {
     //clase005Constantes()
     //clase006EnumClass()
     //clase007Funciones()
-    clase008ControlFlowIf()
+    //clase008ControlFlowIf()
+    clase009ControlFlowFor()
 
 }
 
@@ -129,6 +130,7 @@ enum class ESTADO {
     PLAY,
     PAUSE,
     STOP;
+
     fun descripcion(): String {
         return when (this) {
             PLAY -> "El estado es PLAY"
@@ -141,16 +143,17 @@ enum class ESTADO {
 }
 
 /*007 Funciones */
-fun clase007Funciones(){
+fun clase007Funciones() {
 
-    fun esPar(numero: Int): Boolean{
+    fun esPar(numero: Int): Boolean {
         return numero % 2 == 0
     }
     println(esPar(10))
 
 }
+
 /*008 Control flow -if */
-fun clase008ControlFlowIf(){
+fun clase008ControlFlowIf() {
     val a = 10
     val b = 12
     var max = a
@@ -158,12 +161,39 @@ fun clase008ControlFlowIf(){
         max = b
     println(max)
 
-    max = if (a > b){
+    max = if (a > b) {
         a
-    }else{
+    } else {
         b
     }
     println(max)
+
+
+}
+
+
+/*008 Control flow -for*/
+fun clase009ControlFlowFor() {
+    var listaMutable = mutableListOf<String>("Lalo", "lalo2", "lalo3", "lalo4")
+    var listaInmutable = listOf<String>("auto", "automovil", "Bicicleta")
+
+    //for
+    for (nombre in listaMutable) {
+        println(nombre)
+    }
+    for ((index, value) in listaMutable.withIndex()) {
+        println("nombre: $value con indice: $index")
+    }
+
+
+    // forEach
+    listaInmutable.forEach { elemento ->
+        println(elemento)
+
+    }
+    listaInmutable.forEachIndexed { index, elemento ->
+        println("elemento: $elemento con indice: $index")
+    }
 
 
 }
