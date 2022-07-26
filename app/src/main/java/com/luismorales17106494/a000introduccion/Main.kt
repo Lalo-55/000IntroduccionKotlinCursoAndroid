@@ -10,7 +10,8 @@ fun main() {
     //clase006EnumClass()
     //clase007Funciones()
     //clase008ControlFlowIf()
-    clase009ControlFlowFor()
+    //clase008ControlFlowFor()
+    clase008ControlFlowWhen()
 
 }
 
@@ -173,7 +174,7 @@ fun clase008ControlFlowIf() {
 
 
 /*008 Control flow -for*/
-fun clase009ControlFlowFor() {
+fun clase008ControlFlowFor() {
     var listaMutable = mutableListOf<String>("Lalo", "lalo2", "lalo3", "lalo4")
     var listaInmutable = listOf<String>("auto", "automovil", "Bicicleta")
 
@@ -195,5 +196,25 @@ fun clase009ControlFlowFor() {
         println("elemento: $elemento con indice: $index")
     }
 
+
+}
+
+fun clase008ControlFlowWhen() {
+    val x = 0
+
+    when (x) {
+        1 -> {
+            println("X es 1")
+        }
+        2 -> {
+            println("X es 2")
+        }
+        3 -> {
+            println("X es 3")
+        }
+        else -> {
+            println("X no corresponde a ninguna funcion declarada")
+        }
+    }
 
 }
