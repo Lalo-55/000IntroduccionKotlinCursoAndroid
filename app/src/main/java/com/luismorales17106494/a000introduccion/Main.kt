@@ -1,5 +1,7 @@
 package com.luismorales17106494.a000introduccion
 
+import kotlin.random.Random
+
 fun main() {
 
     //clase001Variables()
@@ -12,7 +14,8 @@ fun main() {
     //clase008ControlFlowIf()
     //clase008ControlFlowFor()
     //clase008ControlFlowWhen()
-    clase008ControlFlowWhileDoWhile()
+    //clase008ControlFlowWhileDoWhile()
+    clase009ExtensionFunctions()
 
 }
 
@@ -239,3 +242,26 @@ fun clase008ControlFlowWhileDoWhile() {
     } while (input != "0")
     println("La suma es $suma")
 }
+
+/*009 Extension Functions*/
+fun clase009ExtensionFunctions() {
+
+    //Extension Functions de ejemplo
+    val nombre = "LALO"
+    println(nombre.toLowerCase())
+
+    val numero = 100
+    println(numero.toDouble())
+
+    println(nombre.removerPrimerElemento())
+    println(nombre.removerUltimoElemento())
+
+
+}
+
+fun String.removerPrimerElemento(): String {
+    return this.substring(1)
+}
+
+fun String.removerUltimoElemento(): String = this.substring(0, this.length - 1)
+
