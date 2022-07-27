@@ -15,7 +15,8 @@ fun main() {
     //clase008ControlFlowFor()
     //clase008ControlFlowWhen()
     //clase008ControlFlowWhileDoWhile()
-    clase009ExtensionFunctions()
+    //clase009ExtensionFunctions()
+    clase010Nullabilidad()
 
 }
 
@@ -265,3 +266,21 @@ fun String.removerPrimerElemento(): String {
 
 fun String.removerUltimoElemento(): String = this.substring(0, this.length - 1)
 
+
+/*010 Nullabilidad*/
+fun clase010Nullabilidad(){
+    val nombre: String? = "Lalo"
+    val c = nombre?.length ?: "lalo".length
+
+    println(c)
+    println(nombre?.length ?: "No hay nombre")
+
+    nombre?.let {
+        println(it.uppercase())
+    }
+
+
+    /* evitar hacer esto
+    println(nombre!!.length)
+     */
+}
