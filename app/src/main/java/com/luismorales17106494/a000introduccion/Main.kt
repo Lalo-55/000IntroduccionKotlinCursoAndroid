@@ -1,6 +1,6 @@
 package com.luismorales17106494.a000introduccion
 
-import kotlin.random.Random
+import java.lang.IllegalArgumentException
 
 fun main() {
 
@@ -16,7 +16,8 @@ fun main() {
     //clase008ControlFlowWhen()
     //clase008ControlFlowWhileDoWhile()
     //clase009ExtensionFunctions()
-    clase010Nullabilidad()
+    //clase010Nullabilidad()
+    clase011IntroduccionGenericos()
 
 }
 
@@ -51,7 +52,7 @@ fun clase002Clases() {
 }
 
 /*003 Clases con Contructor vacio*/
-class Persona2(var nombre: String = "", var apellido: String = "") {
+class Persona2(var nombre: String = "", var apellido: String = "", i: Int) {
 
     fun darBienvenida(): String {
         return "Bienvenido $nombre $apellido"
@@ -60,8 +61,8 @@ class Persona2(var nombre: String = "", var apellido: String = "") {
 }
 
 fun clase003ClasesConstructorVacio() {
-    val persona: Persona2 = Persona2("Lalo", "-55")
-    val persona2 = Persona2()
+    val persona: Persona2 = Persona2("Lalo", "-55", 34)
+    val persona2 = Persona2(i = 34)
 
     println("Persona1:  ${persona.darBienvenida()}")
     println("Persona2:  ${persona2.darBienvenida()}")
@@ -268,7 +269,7 @@ fun String.removerUltimoElemento(): String = this.substring(0, this.length - 1)
 
 
 /*010 Nullabilidad*/
-fun clase010Nullabilidad(){
+fun clase010Nullabilidad() {
     val nombre: String? = "Lalo"
     val c = nombre?.length ?: "lalo".length
 
@@ -283,4 +284,29 @@ fun clase010Nullabilidad(){
     /* evitar hacer esto
     println(nombre!!.length)
      */
+}
+
+/*011 Introducción a Genericos*/
+fun clase011IntroduccionGenericos() {
+
+    Elemento(Persona1("lalo", "55", 33))
+    Elemento("Esto es una cadena de texto")
+    Elemento(50)
+    Elemento(50.6)
+    Elemento(false)
+
+
+
+}
+
+data class Persona1(val nombre: String, val apellido: String, val age: Int)
+
+class Elemento<T>(value: T? = null) {
+
+    init {
+        if (value == null)
+            throw IllegalArgumentException("Se inicio con un valor vacio")
+        println("El valor es ${value}")
+
+    }
 }
